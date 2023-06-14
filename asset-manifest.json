@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fastbytes-gh/static/css/main.dd9cd707.css",
+    "main.js": "/fastbytes-gh/static/js/main.3f1b2f1d.js",
+    "static/media/hero-banner.jpg": "/fastbytes-gh/static/media/hero-banner.ce2090584731d35b4fa8.jpg",
+    "static/media/service-detail-banner.jpg": "/fastbytes-gh/static/media/service-detail-banner.9529d56656859a90388d.jpg",
+    "index.html": "/fastbytes-gh/index.html",
+    "main.dd9cd707.css.map": "/fastbytes-gh/static/css/main.dd9cd707.css.map",
+    "main.3f1b2f1d.js.map": "/fastbytes-gh/static/js/main.3f1b2f1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd9cd707.css",
+    "static/js/main.3f1b2f1d.js"
+  ]
+}
