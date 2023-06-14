@@ -1,21 +1,21 @@
 import React, {useContext, useState, useEffect}from 'react'
-import {  useLocation, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import DataContext from '../../context/DataContext';
 
 const AdminViewRequest = () => {
 
     const { id } = useParams()
     const { request}  = useContext(DataContext)
-    const [open, setOpen] = useState(false);
+    // const [open, setOpen] = useState(false);
     const navigate = useNavigate();
-    const location = useLocation();
+    // const location = useLocation();
     
     const [cargo, setCargo] = useState({});
 
     useEffect(() => {
         const item = request.find(cargo => cargo.id === Number(id) )
         setCargo(item)
-    }, [id]);
+    }, [request, id]);
   
 
 

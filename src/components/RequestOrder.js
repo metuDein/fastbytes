@@ -2,7 +2,7 @@ import { useState, useContext, useRef} from 'react';
 import emailjs from '@emailjs/browser';
 import DataContext from '../context/DataContext';
 import { v4 as uuid } from 'uuid'
-import { set } from 'date-fns';
+
 
 const RequestOrder = () => {
     const form = useRef()
@@ -116,16 +116,7 @@ const RequestOrder = () => {
     }
 
 
-    const sendEmail = (e) => {
-        e.preventDefault();
     
-        emailjs.sendForm('service_vqfpiiq', 'template_41pqsoa', form.current, 'W4owCvwkXbIZxWl9N')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-      };
   
 
     

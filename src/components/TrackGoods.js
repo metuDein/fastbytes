@@ -1,18 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react'
-import { v4 as uuid } from 'uuid'
-import JsBarcode from 'jsbarcode';
+import React, {  useState, useContext } from 'react'
+
 import DataContext from '../context/DataContext';
 
 
 const TrackGoods = () => {
 
-    const {request, setRequest} = useContext(DataContext);
+    const {request} = useContext(DataContext);
     const [cargo, setCargo] = useState({})
 
 
     const [open, setOpen] = useState(false);
-    const [barcode, setBarcode] = useState('');
-    const [error, setError] = useState(null);
+    
     const [trackEmail, setTrackEmail] = useState('');
     const [trackId, setTrackId] = useState('');
 
@@ -29,25 +27,7 @@ const TrackGoods = () => {
 
     }
 
-  useEffect(() => {
-    const generateBarcode = () => {
-        const newBarcode = uuid(); // Generate a unique barcode using UUID
-
-        try {
-            JsBarcode('#barcode', newBarcode, {
-                format: 'CODE128',
-                displayValue: true,
-            });
-            setBarcode(newBarcode);
-            setError(null);
-        } catch (err) {
-            setError('Failed to generate barcode');
-            console.error(err);
-        }
-    };
-    generateBarcode()
-
-  }, [])
+ 
     return (
         <section className='track--sect'>
             <div className='track--form'>
@@ -61,7 +41,7 @@ const TrackGoods = () => {
             {open && <div className='track--result'>
                 <span className='close--tab' onClick={() => setOpen(false)}> close </span>
                 <h1 className='result--title'> FastBytes Logistics </h1>
-                <h1 className='result--title'> {barcode} </h1>
+       
                                 <div className='shipment--info'>
                     <article>
                         <h3>Shipper information</h3>
